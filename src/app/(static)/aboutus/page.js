@@ -1,15 +1,9 @@
 
 
-
-
-
 const Aboutus = () => {
   return (
     <section className="mb-40">
   
-
-
-
 
     <div className="bg-neutral-50 py-24 px-6 text-center dark:bg-neutral-900">
       <h1 className="mt-2 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">

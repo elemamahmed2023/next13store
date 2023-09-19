@@ -6,10 +6,6 @@ import Link from "next/link.js";
 import React from "react";
 import Logo from "@/app/elements/Logo/Logo.jsx";
 
-
-
-
-
 const Navbar = () => {
 
   return (
@@ -22,16 +18,43 @@ const Navbar = () => {
            lg:flex-wrap lg:justify-start lg:py-4"
         data-te-navbar-ref
       >
-        <div className="flex w-full flex-wrap items-center justify-between ">
+        <div className="flex flex-1 items-center justify-between ">
           <div className="ml-2">
             <Link href={"/"}>
               <Logo />
             </Link>
           </div>
 
-          {/* <!-- Hamburger button for mobile view --> */}
+    
+            <ul
+              className="list-style-none  hidden sm:flex justify-center align-middle "
+              data-te-navbar-nav-ref
+            >
+              {navbarLinks.map((link) => (
+                <Link key={link.label} href={link.route}>
+                  <li>
+                    <div className="text-red-950 mr-4  mt-1">
+                      <div className="flex justify-start ">
+                        {/* <Image
+                          src={link.imgURL}
+                          width={25}
+                          height={25}
+                          alt="photo"
+                        /> */}
+                        <div>{link.label}</div>
+                      </div>
+                    </div>
+                  </li>
+                </Link>
+              ))}
+        
+            </ul>
+          
+        </div>
+
+        {/* <!-- Hamburger button for mobile view --> */}
           <button
-            className="block border-0 bg-transparent px-2 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
+            className="block border-0 bg-transparent px-5 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 "
             type="button"
             data-te-collapse-init
             data-te-target="#navbarSupportedContent2"
@@ -57,38 +80,7 @@ const Navbar = () => {
             </span>
           </button>
 
-          {/* <!-- Collapsible navbar container --> */}
-          <div
-            className="!visible mt-2 hidden mr-20 basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
-            id="navbarSupportedContent2"
-            data-te-collapse-item
-          >
-            <ul
-              className="list-style-none mr-auto  ml-8 flex flex-col pl-0 lg:mt-1 lg:flex-row"
-              data-te-navbar-nav-ref
-            >
-              {navbarLinks.map((link) => (
-                <Link key={link.label} href={link.route}>
-                  <li>
-                    <div className="text-red-950 mr-4  mt-1">
-                      <div className="flex justify-start ">
-                        {/* <Image
-                          src={link.imgURL}
-                          width={25}
-                          height={25}
-                          alt="photo"
-                        /> */}
-                        <div>{link.label}</div>
-                      </div>
-                    </div>
-                  </li>
-                </Link>
-              ))}
 
-              <Button />
-            </ul>
-          </div>
-        </div>
       </nav>
     
     

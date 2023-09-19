@@ -74,8 +74,7 @@ const Footer = () => {
           </a>
         </div>
 
-        <div className=" p-4 text-center hidden md:block 
-        ">
+        <div className=" p-4 text-center hidden md:block ">
           © 2023 Copyright:
           <a
             className="text-neutral-800 dark:text-neutral-400"
